@@ -1,0 +1,45 @@
+<!-- This page displays the GitHub user information. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitHub Profile</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>GitHub Profile</h1>
+        <div class="profile">
+            <img src="<%= avatar %>" alt="profile image">
+            <div class="profile-info">
+                <h2>Username: <%= username %>
+                </h2>
+                <p>Bio:- <%= bio %>
+                </p>
+                <div class="stats">
+                    <p>Followers <%= followers %>
+                    </p>
+                    <p>Following <%= followings %>
+                    </p>
+                    <p>Public Repos <%= publicRepos %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="repo-list">
+            <% const repo=repos %>
+                <h2>Repositories</h2>
+                <% for (let i=0; i < repo.length; i++) { const element=repo[i]; %>
+                    <div class="repo">
+                        <a href="<%= element.html_url %>" target="_blank">
+                            <%= element.name %>
+                        </a>
+                    </div>
+                    <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
